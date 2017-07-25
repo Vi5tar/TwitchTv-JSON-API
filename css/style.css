@@ -1,0 +1,68 @@
+/* Style the tab */
+
+div.tab {
+  padding-top: 10%;
+  overflow: hidden;
+  /*border: 1px solid #ccc;*/
+  /*background-color: #f1f1f1;*/
+}
+
+/* Style the buttons inside the tab */
+
+div.tab button {
+  background-color: inherent;
+  float: right;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.button0 {
+  color: white;
+  background-color: #428bca;
+}
+
+.button1 {
+  color: white;
+  background-color: #5cb85c;
+}
+
+.button2 {
+  color: white;
+  background-color: #d9534f;
+}
+
+/* Change background color of buttons on hover */
+
+div.tab button:hover {
+  background-color: #ddd;
+}
+
+.name {
+  display: inline;
+  position: relative;
+  left: 2%;
+}
+
+.description {
+  display: inline;
+  position: relative;
+  left: 20%;
+}
+
+.game {
+  display: inline;
+  position: relative;
+  left: 10%;
+}
+
+.table th, .table td {
+  border-top: none !important;
+}
+
+.table {
+  display: inline;
+}
