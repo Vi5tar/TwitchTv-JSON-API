@@ -1,5 +1,4 @@
 /* Style the tab */
-
 div.tab {
   padding-top: 10%;
   overflow: hidden;
@@ -8,7 +7,6 @@ div.tab {
 }
 
 /* Style the buttons inside the tab */
-
 div.tab button {
   background-color: inherent;
   float: right;
@@ -36,33 +34,31 @@ div.tab button {
 }
 
 /* Change background color of buttons on hover */
-
 div.tab button:hover {
   background-color: #ddd;
 }
 
+.well {
+  position: relative;
+}
+
 .name {
   display: inline;
-  position: relative;
-  left: 2%;
+  position: absolute;
+  top: 40%;
+  left: 20%;
 }
 
 .description {
   display: inline;
-  position: relative;
-  left: 20%;
+  position: absolute;
+  top: 40%;
+  left: 60%;
 }
 
 .game {
   display: inline;
-  position: relative;
-  left: 10%;
-}
-
-.table th, .table td {
-  border-top: none !important;
-}
-
-.table {
-  display: inline;
+  position: absolute;
+  top: 40%;
+  left: 40%;
 }

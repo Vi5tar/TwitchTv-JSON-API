@@ -22,14 +22,10 @@ $(document).ready(function() {
     $.getJSON(url + stream + streamers[i], function(object) {
       streamArray.push(object);
       allStreamers();
-      debug();
     });
   }
 });
 
-function debug() {
-  console.log(streamArray);
-}
 //displays all streamers and their online status
 function allStreamers() {
   document.getElementById("list").style.backgroundColor = "#428bca";
@@ -45,16 +41,16 @@ function onlineStreamers() {
     if (streamArray[i].stream != null) {
       $("#" + streamArray[i].stream.channel.display_name).html(
         "<div class='well'><img src='" +
-          streamArray[i].stream.channel.logo +
-          "' alt='Logo Unavailable.' class='img-rounded img-responsive' width='10%' style='display:inline'><table class='table'><td><a href='https://www.twitch.tv/" +
-          streamArray[i].stream.channel.display_name +
-          "'>" +
-          streamArray[i].stream.channel.display_name +
-          "</a><td>" +
-          streamArray[i].stream.channel.game +
-          "</td><td>" +
-          streamArray[i].stream.channel.status +
-          "</td></div>"
+        streamArray[i].stream.channel.logo +
+        "' alt='Logo Unavailable.' class='img-rounded img-responsive' width='10%' style='display:inline'><div class='name'><a href='https://www.twitch.tv/" +
+        streamArray[i].stream.channel.display_name +
+        "'>" +
+        streamArray[i].stream.channel.display_name +
+        "</a></div><div class='game'>" +
+        streamArray[i].stream.channel.game +
+        "</div><div class='description'>" +
+        streamArray[i].stream.channel.status +
+        "</div></div>"
       );
     }
   }
@@ -102,18 +98,20 @@ function switchApi() {
       $.getJSON(url + users + "ESL_SC2", function(data) {
         switch (data.error) {
           case "Not Found":
-            $("#ESL_SC2").html("<div class ='well'>" + data.message + "</div>");
+            $("#ESL_SC2").html("<div class ='well'>" + data.message +
+              "</div>");
             break;
           case "Unprocessable Entity":
-            $("#ESL_SC2").html("<div class ='well'>" + data.message + "</div>");
+            $("#ESL_SC2").html("<div class ='well'>" + data.message +
+              "</div>");
             break;
           default:
             $("#ESL_SC2").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
@@ -134,10 +132,10 @@ function switchApi() {
           default:
             $("#OgamingSC2").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
@@ -158,10 +156,10 @@ function switchApi() {
           default:
             $("#cretetion").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
@@ -182,10 +180,10 @@ function switchApi() {
           default:
             $("#freecodecamp").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
@@ -206,10 +204,10 @@ function switchApi() {
           default:
             $("#storbeck").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
@@ -230,10 +228,10 @@ function switchApi() {
           default:
             $("#habathcx").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
@@ -254,10 +252,10 @@ function switchApi() {
           default:
             $("#RobotCaleb").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
@@ -278,10 +276,10 @@ function switchApi() {
           default:
             $("#noobs2ninjas").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
@@ -302,10 +300,10 @@ function switchApi() {
           default:
             $("#brunofin").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
@@ -326,10 +324,10 @@ function switchApi() {
           default:
             $("#comster404").html(
               "<div class='well'><img src='" +
-                data.logo +
-                "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
-                data.display_name +
-                "</div><div class='description'>Offline</div></div"
+              data.logo +
+              "' alt='Logo Unavailable.' class ='img-rounded img-responsive' style='display:inline' width='10%'><div class='name'>" +
+              data.display_name +
+              "</div><div class='description'>Offline</div></div"
             );
         }
       });
